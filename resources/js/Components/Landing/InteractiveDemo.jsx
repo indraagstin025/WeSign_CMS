@@ -227,7 +227,7 @@ export default function InteractiveDemo() {
                                         <span className="text-[10px] font-bold uppercase tracking-wider text-amber-700 bg-amber-100 dark:bg-amber-950 px-2 py-0.5 rounded">
                                             Pihak 3 (Client)
                                         </span>
-                                        <span className="w-2 h-2 rounded-full bg-amber-500 animate-ping" />
+                                        <span className="w-2 h-2 rounded-full bg-amber-500" />
                                     </div>
                                     <h4 className="text-sm font-bold text-zinc-900 dark:text-white">Siti Rahmawati</h4>
                                     <p className="text-xs text-zinc-400">Link Notifikasi WhatsApp Terkirim</p>

@@ -1,81 +1,77 @@
-import { UploadCloud, Move, FileCheck, ArrowRight } from 'lucide-react';
+import { UploadCloud, Users, PenTool, FileCheck } from 'lucide-react';
 
 export default function WorkflowSection() {
-    const steps = [
+    const stages = [
         {
-            number: '01',
+            stage: 'Tahap 1',
             icon: UploadCloud,
             title: 'Unggah Berkas PDF',
-            description: 'Masukkan dokumen kontrak, MOU, atau berkas legal Anda ke dalam ruang kerja yang terenkripsi aman.',
-            highlight: 'Mendukung multi-halaman',
+            description: 'Masukkan dokumen kontrak, surat perjanjian, atau formulir internal ke dalam ruang kerja yang aman.',
         },
         {
-            number: '02',
-            icon: Move,
-            title: 'Atur Titik & Penandatangan',
-            description: 'Tarik kotak tanda tangan atau stempel langsung ke posisi yang diinginkan, lalu tentukan pihak penandatangan.',
-            highlight: 'Drag & Drop Presisi',
+            stage: 'Tahap 2',
+            icon: Users,
+            title: 'Atur Pihak & Urutan',
+            description: 'Tentukan pihak penandatangan dan pilih alur: Sekuensial (bergantian) atau Paralel (serempak).',
         },
         {
-            number: '03',
+            stage: 'Tahap 3',
+            icon: PenTool,
+            title: 'Pembubuhan Tanda Tangan',
+            description: 'Penerima menandatangani secara instan via browser melalui goresan tangan, ketikan nama, atau stempel resmi.',
+        },
+        {
+            stage: 'Tahap 4',
             icon: FileCheck,
-            title: 'Tandatangani & Unduh Berkas Sah',
-            description: 'Pihak terkait menandatangani secara instan. Sistem menyematkan sertifikat audit trail dan segel QR code.',
-            highlight: '100% Kriptografis Sah',
+            title: 'Validasi & Sertifikat Audit',
+            description: 'Sistem menyegel berkas dengan hash SHA-256, QR code verifikasi publik, serta sertifikat log jejak audit.',
         },
     ];
 
     return (
-        <section id="alur-kerja" className="py-24 bg-white dark:bg-zinc-950 border-t border-zinc-200/80 dark:border-zinc-800">
+        <section id="alur-kerja" className="py-20 bg-white dark:bg-zinc-950 border-b border-zinc-200/80 dark:border-zinc-800">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Header */}
-                <div className="max-w-3xl mx-auto text-center mb-16">
-                    <p className="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 mb-2">
-                        Alur Kerja Intuitif
-                    </p>
-                    <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-zinc-900 dark:text-white tracking-tight">
-                        Hanya 3 Langkah Mudah Menuju Dokumen Sah
+                <div className="max-w-3xl mx-auto text-center mb-14">
+                    <span className="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">
+                        Alur Kerja Sistem
+                    </span>
+                    <h2 className="text-3xl sm:text-4xl font-extrabold text-zinc-900 dark:text-white tracking-tight mt-2">
+                        Siklus Penandatanganan dari Pengunggahan hingga Segel Resmi
                     </h2>
-                    <p className="mt-4 text-base sm:text-lg text-zinc-600 dark:text-zinc-400">
-                        Tanpa mencetak kertas, tanpa scanner manual, dan tanpa hambatan birokrasi berulang.
+                    <p className="mt-3 text-base text-zinc-600 dark:text-zinc-400">
+                        Alur terstruktur yang memastikan kejelasan status, kemudahan bagi para pihak, dan keabsahan hukum.
                     </p>
                 </div>
 
-                {/* Steps Cards */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
-                    {steps.map((step, index) => {
-                        const Icon = step.icon;
+                {/* Workflow Stepper Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    {stages.map((item, index) => {
+                        const Icon = item.icon;
                         return (
                             <div
                                 key={index}
-                                className="relative bg-zinc-50 dark:bg-zinc-900/60 border border-zinc-200/80 dark:border-zinc-800 rounded-3xl p-8 flex flex-col justify-between hover:border-emerald-500/40 transition-all duration-300"
+                                className="p-6 rounded-2xl bg-zinc-50 dark:bg-zinc-900/50 border border-zinc-200/80 dark:border-zinc-800 flex flex-col justify-between"
                             >
                                 <div>
-                                    <div className="flex items-center justify-between mb-6">
-                                        <div className="w-12 h-12 rounded-2xl bg-emerald-600 text-white flex items-center justify-center font-bold text-lg shadow-md shadow-emerald-600/30">
-                                            <Icon className="w-6 h-6" />
+                                    <div className="flex items-center justify-between mb-4">
+                                        <div className="w-9 h-9 rounded-lg bg-zinc-100 dark:bg-zinc-800 text-emerald-600 dark:text-emerald-400 flex items-center justify-center border border-zinc-200/60 dark:border-zinc-700/60">
+                                            <Icon className="w-5 h-5" />
                                         </div>
-                                        <span className="text-4xl font-extrabold text-zinc-200 dark:text-zinc-800 tracking-tight font-mono">
-                                            {step.number}
+                                        <span className="text-xs font-mono font-bold text-zinc-400">
+                                            {item.stage}
                                         </span>
                                     </div>
-
-                                    <h3 className="text-xl font-bold text-zinc-900 dark:text-white">
-                                        {step.title}
+                                    <h3 className="text-base font-bold text-zinc-900 dark:text-white">
+                                        {item.title}
                                     </h3>
-
-                                    <p className="mt-3 text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed font-normal">
-                                        {step.description}
+                                    <p className="mt-2 text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                                        {item.description}
                                     </p>
                                 </div>
 
-                                <div className="mt-6 pt-4 border-t border-zinc-200/60 dark:border-zinc-800 flex items-center justify-between">
-                                    <span className="text-xs font-semibold text-emerald-600 dark:text-emerald-400">
-                                        {step.highlight}
-                                    </span>
-                                    {index < steps.length - 1 && (
-                                        <ArrowRight className="hidden md:block w-4 h-4 text-zinc-400" />
-                                    )}
+                                <div className="mt-4 pt-3 border-t border-zinc-200/60 dark:border-zinc-800 text-[11px] text-emerald-600 dark:text-emerald-400 font-medium">
+                                    Langkah {index + 1} dari 4
                                 </div>
                             </div>
                         );

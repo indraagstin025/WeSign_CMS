@@ -1,51 +1,50 @@
 import { useState } from 'react';
-import { ChevronDown, HelpCircle } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 
 export default function FAQSection() {
     const [openIndex, setOpenIndex] = useState(0);
 
     const faqs = [
         {
-            question: 'Apakah tanda tangan digital WeSign sah secara hukum?',
+            question: 'Apakah tanda tangan digital WeSign sah di mata hukum Indonesia?',
             answer:
-                'Ya, tanda tangan digital WeSign dirancang memenuhi ketentuan dokumen elektronik dengan enkripsi SHA-256, identifikasi identitas penandatangan, serta sertifikat audit trail lengkap yang mencatat waktu (timestamp) dan integritas data tanpa perubahan.',
+                'Ya, keabsahan tanda tangan digital pada WeSign dirancang sesuai dengan Undang-Undang Informasi dan Transaksi Elektronik (UU ITE No. 11/2008 Pasal 11) serta Peraturan Pemerintah No. 71/2019. Setiap berkas memuat identitas terverifikasi dari para penandatangan dan segel hash SHA-256 yang menjamin integritas isi dokumen.',
         },
         {
-            question: 'Bagaimana WeSign menjamin keamanan dan anti-pemalsuan berkas?',
+            question: 'Bagaimana membuktikan bahwa isi dokumen tidak dimanipulasi setelah ditandatangani?',
             answer:
-                'Setiap berkas PDF yang selesai ditandatangani dibungkus dengan cryptographic hash SHA-256. Jika isi dokumen diubah bahkan 1 karakter pun setelah ditandatangani, verifikasi sistem dan pemindaian QR code akan langsung mendeteksi bahwa dokumen telah rusak/tidak valid.',
+                'Saat penandatanganan selesai, WeSign menghitung checksum hash kriptografis SHA-256 dari seluruh isi PDF dan menerbitkan kode QR verifikasi publik. Jika berkas diubah walaupun 1 karakter saja setelah penandatanganan, nilai hash akan langsung berubah dan pemindaian kode QR akan mendeteksi bahwa dokumen telah dimodifikasi.',
         },
         {
-            question: 'Apakah penerima dokumen harus membayar untuk menandatangani?',
+            question: 'Apakah penerima dokumen wajib memiliki akun atau membayar langganan WeSign?',
             answer:
-                'Sama sekali tidak. Pihak penerima atau pihak ketiga yang diundang untuk menandatangani berkas dapat membuka, membubuhkan tanda tangan, dan mengunduh berkas secara 100% gratis tanpa perlu berlangganan.',
+                'Tidak. Pihak penerima atau pihak ketiga yang diundang untuk menandatangani dokumen dapat langsung membuka tautan aman melalui peramban web (browser), membubuhkan tanda tangan, dan mengunduh berkas akhir secara gratis tanpa harus memiliki akun berbayar.',
         },
         {
-            question: 'Apakah WeSign dapat diakses melalui browser smartphone?',
+            question: 'Apa perbedaan antara mode penandatanganan Sekuensial dan Paralel pada MultiSign?',
             answer:
-                'Ya! WeSign dibuat dengan prinsip mobile-first dan antarmuka responsif. Penandatangan dapat membubuhkan tanda tangan menggunakan jari atau stylus langsung dari layar handphone tanpa perlu memasang aplikasi tambahan.',
+                'Pada mode Sekuensial, dokumen didistribusikan secara berurutan sesuai urutan jabatan: pihak kedua baru menerima notifikasi setelah pihak pertama selesai menandatangani. Pada mode Paralel, seluruh pihak menerima notifikasi secara bersamaan dan dapat menandatangani kapan saja tanpa perlu saling menunggu.',
         },
         {
-            question: 'Bagaimana cara kerja fitur MultiSign & Kolaborasi Grup?',
+            question: 'Apakah WeSign mendukung pembubuhan tanda tangan dari perangkat smartphone atau tablet?',
             answer:
-                'Anda dapat membuat grup penandatangan, menentukan urutan siapa yang menandatangani lebih dulu (sekuensial) atau menandatangani bersamaan (paralel), serta mengatur pengingat otomatis via WhatsApp dan Email jika ada pihak yang belum menandatangani.',
+                'Ya, antarmuka penandatanganan WeSign responsif dan mendukung layar sentuh secara penuh. Penandatangan dapat membubuhkan goresan tanda tangan menggunakan jari atau stylus secara langsung dari browser ponsel pintar tanpa memerlukan aplikasi tambahan.',
         },
     ];
 
     return (
-        <section id="faq" className="py-24 bg-zinc-50/60 dark:bg-zinc-900/40 border-t border-zinc-200/80 dark:border-zinc-800">
+        <section id="faq" className="py-20 bg-white dark:bg-zinc-950 border-b border-zinc-200/80 dark:border-zinc-800">
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Header */}
-                <div className="text-center mb-14">
-                    <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200 dark:border-emerald-800 text-emerald-700 dark:text-emerald-300 text-xs font-bold uppercase tracking-wider mb-3">
-                        <HelpCircle className="w-3.5 h-3.5" />
-                        Pusat Bantuan & FAQ
-                    </div>
-                    <h2 className="text-3xl sm:text-4xl font-extrabold text-zinc-900 dark:text-white tracking-tight">
-                        Pertanyaan yang Sering Diajukan
+                <div className="text-center mb-12">
+                    <span className="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">
+                        Pertanyaan Umum
+                    </span>
+                    <h2 className="text-3xl sm:text-4xl font-extrabold text-zinc-900 dark:text-white tracking-tight mt-2">
+                        Hal yang Sering Ditanyakan
                     </h2>
                     <p className="mt-3 text-base text-zinc-600 dark:text-zinc-400">
-                        Semua yang perlu Anda ketahui mengenai platform WeSign.
+                        Penjelasan mengenai keabsahan hukum, mekanisme kriptografis, dan alur penandatanganan WeSign.
                     </p>
                 </div>
 
@@ -56,28 +55,25 @@ export default function FAQSection() {
                         return (
                             <div
                                 key={index}
-                                className="rounded-2xl border border-zinc-200/80 dark:border-zinc-800 bg-white dark:bg-zinc-900 overflow-hidden transition-all duration-200 shadow-xs"
+                                className="rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-50/50 dark:bg-zinc-900/50 overflow-hidden"
                             >
                                 <button
                                     onClick={() => setOpenIndex(isOpen ? -1 : index)}
-                                    className="w-full px-6 py-5 flex items-center justify-between text-left group"
+                                    className="w-full px-5 py-4 flex items-center justify-between text-left focus-visible:outline-2 focus-visible:outline-emerald-600"
+                                    aria-expanded={isOpen}
                                 >
-                                    <span className="text-sm sm:text-base font-bold text-zinc-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+                                    <span className="text-sm font-bold text-zinc-900 dark:text-white pr-4">
                                         {faq.question}
                                     </span>
-                                    <div
-                                        className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-transform duration-300 ${
-                                            isOpen
-                                                ? 'bg-emerald-50 dark:bg-emerald-950 text-emerald-600 rotate-180'
-                                                : 'bg-zinc-100 dark:bg-zinc-800 text-zinc-500'
+                                    <ChevronDown
+                                        className={`w-4 h-4 text-zinc-500 transition-transform duration-200 shrink-0 ${
+                                            isOpen ? 'rotate-180 text-emerald-600' : ''
                                         }`}
-                                    >
-                                        <ChevronDown className="w-4 h-4" />
-                                    </div>
+                                    />
                                 </button>
 
                                 {isOpen && (
-                                    <div className="px-6 pb-5 text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed border-t border-zinc-100 dark:border-zinc-800/80 pt-3">
+                                    <div className="px-5 pb-4 text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed border-t border-zinc-200/60 dark:border-zinc-800 pt-3">
                                         {faq.answer}
                                     </div>
                                 )}
