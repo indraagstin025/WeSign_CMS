@@ -2,15 +2,12 @@ import { useState } from 'react';
 import { 
     PenLine, 
     Type, 
-    UploadCloud, 
     QrCode, 
     ShieldCheck, 
     Users, 
     CheckCircle2, 
-    RefreshCw, 
     Stamp,
-    Clock,
-    FileCheck2
+    Clock
 } from 'lucide-react';
 
 export default function InteractiveDemo() {
@@ -20,18 +17,18 @@ export default function InteractiveDemo() {
     const [isSigned, setIsSigned] = useState(true);
 
     return (
-        <section id="simulasi" className="py-24 bg-zinc-50 dark:bg-zinc-900/40 border-t border-zinc-200/80 dark:border-zinc-800">
+        <section id="demo" className="py-24 bg-zinc-50 dark:bg-zinc-900/40 border-t border-zinc-200/80 dark:border-zinc-800">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Header */}
                 <div className="max-w-3xl mx-auto text-center mb-12">
                     <span className="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">
-                        Eksplorasi Langsung
+                        Interactive Simulation
                     </span>
                     <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-zinc-900 dark:text-white tracking-tight mt-2">
-                        Rasakan Kemudahan Alur Kerja WeSign
+                        Experience the WeSign Execution Engine
                     </h2>
                     <p className="mt-4 text-base sm:text-lg text-zinc-600 dark:text-zinc-400">
-                        Coba simulasi interaktif di bawah ini untuk melihat bagaimana dokumen ditandatangani, dipantau, dan diverifikasi.
+                        Explore how digital signatures are applied, multi-party routing is orchestrated, and documents are publicly validated.
                     </p>
                 </div>
 
@@ -47,7 +44,7 @@ export default function InteractiveDemo() {
                             }`}
                         >
                             <PenLine className="w-4 h-4" />
-                            <span>1. Bubuhkan TTD & Stempel</span>
+                            <span>1. Sign & Stamp Pad</span>
                         </button>
                         <button
                             onClick={() => setActiveTab('multisign')}
@@ -58,7 +55,7 @@ export default function InteractiveDemo() {
                             }`}
                         >
                             <Users className="w-4 h-4" />
-                            <span>2. MultiSign Alur Tim</span>
+                            <span>2. MultiSign Workflow</span>
                         </button>
                         <button
                             onClick={() => setActiveTab('verify')}
@@ -69,23 +66,23 @@ export default function InteractiveDemo() {
                             }`}
                         >
                             <ShieldCheck className="w-4 h-4" />
-                            <span>3. Verifikasi Keaslian QR</span>
+                            <span>3. QR Authenticity Check</span>
                         </button>
                     </div>
                 </div>
 
                 {/* Interactive Card Canvas */}
                 <div className="max-w-4xl mx-auto bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-3xl p-6 sm:p-8 shadow-xl">
-                    {/* Tab 1: Penandatanganan Interaktif */}
+                    {/* Tab 1: Interactive Signing */}
                     {activeTab === 'sign' && (
                         <div className="space-y-6">
                             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-zinc-100 dark:border-zinc-800">
                                 <div>
                                     <h3 className="text-base font-bold text-zinc-900 dark:text-white">
-                                        Pilih Metode Penandatanganan
+                                        Select Signature Method
                                     </h3>
                                     <p className="text-xs text-zinc-500">
-                                        Pilih gaya tanda tangan yang sesuai preferensi Anda
+                                        Choose your preferred input instrument
                                     </p>
                                 </div>
                                 <div className="flex items-center gap-2">
@@ -97,7 +94,7 @@ export default function InteractiveDemo() {
                                                 : 'border-zinc-200 dark:border-zinc-700 text-zinc-600'
                                         }`}
                                     >
-                                        <PenLine className="w-3.5 h-3.5" /> Goresan Tangan
+                                        <PenLine className="w-3.5 h-3.5" /> Draw
                                     </button>
                                     <button
                                         onClick={() => setSignatureType('type')}
@@ -107,7 +104,7 @@ export default function InteractiveDemo() {
                                                 : 'border-zinc-200 dark:border-zinc-700 text-zinc-600'
                                         }`}
                                     >
-                                        <Type className="w-3.5 h-3.5" /> Ketik Nama
+                                        <Type className="w-3.5 h-3.5" /> Type Name
                                     </button>
                                     <button
                                         onClick={() => setSignatureType('stamp')}
@@ -117,7 +114,7 @@ export default function InteractiveDemo() {
                                                 : 'border-zinc-200 dark:border-zinc-700 text-zinc-600'
                                         }`}
                                     >
-                                        <Stamp className="w-3.5 h-3.5" /> Stempel Basah
+                                        <Stamp className="w-3.5 h-3.5" /> Official Seal
                                     </button>
                                 </div>
                             </div>
@@ -130,7 +127,7 @@ export default function InteractiveDemo() {
                                             type="text"
                                             value={signName}
                                             onChange={(e) => setSignName(e.target.value)}
-                                            placeholder="Masukkan nama Anda..."
+                                            placeholder="Type your legal name..."
                                             className="w-full text-center text-sm font-semibold rounded-xl border-zinc-300 dark:border-zinc-700 dark:bg-zinc-900 focus:ring-emerald-500"
                                         />
                                     </div>
@@ -151,13 +148,13 @@ export default function InteractiveDemo() {
 
                                     {signatureType === 'type' && (
                                         <div className="font-serif italic text-3xl font-bold text-emerald-600 dark:text-emerald-400 tracking-wider">
-                                            {signName || 'Nama Anda'}
+                                            {signName || 'Your Name'}
                                         </div>
                                     )}
 
                                     {signatureType === 'stamp' && (
                                         <div className="w-32 h-32 rounded-full border-4 border-emerald-600 dark:border-emerald-400 p-2 flex flex-col items-center justify-center text-center text-emerald-700 dark:text-emerald-300 font-bold uppercase tracking-wider text-[10px] transform -rotate-6">
-                                            <span>PT. WESIGN SAAS</span>
+                                            <span>WESIGN ENTERPRISE</span>
                                             <span className="text-[8px] my-1 font-mono">★★ VERIFIED ★★</span>
                                             <span className="text-[9px]">OFFICIAL SEAL</span>
                                         </div>
@@ -165,7 +162,7 @@ export default function InteractiveDemo() {
 
                                     <div className="mt-3 flex items-center gap-1.5 text-[10px] font-mono text-zinc-400">
                                         <ShieldCheck className="w-3.5 h-3.5 text-emerald-500" />
-                                        <span>Segel Kriptografis Aktif (SHA-256)</span>
+                                        <span>Cryptographic Checksum Active (SHA-256)</span>
                                     </div>
                                 </div>
 
@@ -174,7 +171,7 @@ export default function InteractiveDemo() {
                                         onClick={() => setIsSigned(!isSigned)}
                                         className="px-4 py-2 rounded-xl text-xs font-bold bg-emerald-600 text-white hover:bg-emerald-700 transition-colors shadow-xs"
                                     >
-                                        {isSigned ? '✓ Tanda Tangan Terpasang' : 'Bubuhkan ke Berkas'}
+                                        {isSigned ? '✓ Signature Bound to Document' : 'Execute Signature'}
                                     </button>
                                 </div>
                             </div>
@@ -186,10 +183,10 @@ export default function InteractiveDemo() {
                         <div className="space-y-6">
                             <div>
                                 <h3 className="text-base font-bold text-zinc-900 dark:text-white">
-                                    Alur Kerja Penandatanganan Paralel & Sekuensial
+                                    Multi-Party Routing & Verification Status
                                 </h3>
                                 <p className="text-xs text-zinc-500">
-                                    Lacak status tiap pihak secara real-time dengan notifikasi otomatis
+                                    Track signing progression across departments with automated notifications
                                 </p>
                             </div>
 
@@ -197,57 +194,57 @@ export default function InteractiveDemo() {
                                 <div className="p-4 rounded-2xl bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 space-y-2">
                                     <div className="flex items-center justify-between">
                                         <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-600 bg-emerald-50 dark:bg-emerald-950 px-2 py-0.5 rounded">
-                                            Pihak 1 (Legal)
+                                            Signer 1 (Legal)
                                         </span>
                                         <span className="w-2 h-2 rounded-full bg-emerald-500" />
                                     </div>
-                                    <h4 className="text-sm font-bold text-zinc-900 dark:text-white">Budi Santoso, S.H.</h4>
-                                    <p className="text-xs text-zinc-400">Ditandatangani via Desktop</p>
+                                    <h4 className="text-sm font-bold text-zinc-900 dark:text-white">Marcus Vance, LL.M.</h4>
+                                    <p className="text-xs text-zinc-400">Signed via Desktop Browser</p>
                                     <div className="pt-2 text-[10px] font-mono text-emerald-600 flex items-center gap-1">
-                                        <CheckCircle2 className="w-3.5 h-3.5" /> 08:30 WIB • Sukses
+                                        <CheckCircle2 className="w-3.5 h-3.5" /> 08:30 AM • Completed
                                     </div>
                                 </div>
 
                                 <div className="p-4 rounded-2xl bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 space-y-2">
                                     <div className="flex items-center justify-between">
                                         <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-600 bg-emerald-50 dark:bg-emerald-950 px-2 py-0.5 rounded">
-                                            Pihak 2 (Finance)
+                                            Signer 2 (Finance)
                                         </span>
                                         <span className="w-2 h-2 rounded-full bg-emerald-500" />
                                     </div>
                                     <h4 className="text-sm font-bold text-zinc-900 dark:text-white">Indra Agustin, M.M.</h4>
-                                    <p className="text-xs text-zinc-400">Ditandatangani via Smartphone</p>
+                                    <p className="text-xs text-zinc-400">Signed via Mobile Touch Canvas</p>
                                     <div className="pt-2 text-[10px] font-mono text-emerald-600 flex items-center gap-1">
-                                        <CheckCircle2 className="w-3.5 h-3.5" /> 09:12 WIB • Sukses
+                                        <CheckCircle2 className="w-3.5 h-3.5" /> 09:12 AM • Completed
                                     </div>
                                 </div>
 
                                 <div className="p-4 rounded-2xl bg-amber-50/50 dark:bg-amber-950/20 border border-amber-200 dark:border-amber-800/60 space-y-2">
                                     <div className="flex items-center justify-between">
                                         <span className="text-[10px] font-bold uppercase tracking-wider text-amber-700 bg-amber-100 dark:bg-amber-950 px-2 py-0.5 rounded">
-                                            Pihak 3 (Client)
+                                            Signer 3 (Client)
                                         </span>
                                         <span className="w-2 h-2 rounded-full bg-amber-500" />
                                     </div>
-                                    <h4 className="text-sm font-bold text-zinc-900 dark:text-white">Siti Rahmawati</h4>
-                                    <p className="text-xs text-zinc-400">Link Notifikasi WhatsApp Terkirim</p>
+                                    <h4 className="text-sm font-bold text-zinc-900 dark:text-white">Sarah Jenkins</h4>
+                                    <p className="text-xs text-zinc-400">Secure link dispatched via email</p>
                                     <div className="pt-2 text-[10px] font-mono text-amber-600 flex items-center gap-1">
-                                        <Clock className="w-3.5 h-3.5" /> Menunggu Tindakan
+                                        <Clock className="w-3.5 h-3.5" /> Awaiting Review
                                     </div>
                                 </div>
                             </div>
                         </div>
                     )}
 
-                    {/* Tab 3: Verifikasi QR & Audit Trail */}
+                    {/* Tab 3: QR Verification & Audit Trail */}
                     {activeTab === 'verify' && (
                         <div className="space-y-6">
                             <div>
                                 <h3 className="text-base font-bold text-zinc-900 dark:text-white">
-                                    Sistem Validasi Integritas Dokumen Terbuka
+                                    Public Document Verification System
                                 </h3>
                                 <p className="text-xs text-zinc-500">
-                                    Pihak eksternal dapat memverifikasi lembar sertifikat sah secara instan
+                                    Independent external validation of cryptographically sealed records
                                 </p>
                             </div>
 
@@ -257,7 +254,7 @@ export default function InteractiveDemo() {
                                         <QrCode className="w-20 h-20" />
                                     </div>
                                     <span className="text-xs font-bold text-zinc-800 dark:text-white">
-                                        Scan dengan Kamera HP
+                                        Scan with Mobile Camera
                                     </span>
                                     <span className="text-[10px] text-zinc-400 font-mono mt-0.5">
                                         wesign.app/verify/WS-89412
@@ -267,24 +264,24 @@ export default function InteractiveDemo() {
                                 <div className="sm:col-span-8 space-y-3">
                                     <div className="flex items-center gap-2 text-emerald-600 text-xs font-bold">
                                         <CheckCircle2 className="w-4 h-4" />
-                                        <span>STATUS: DOKUMEN ASLI & TERVERIFIKASI PENUH</span>
+                                        <span>STATUS: FULLY VERIFIED & CRYPTOGRAPHICALLY INTACT</span>
                                     </div>
                                     <div className="space-y-1.5 text-xs text-zinc-600 dark:text-zinc-300">
                                         <div className="flex justify-between py-1 border-b border-zinc-200 dark:border-zinc-800">
-                                            <span className="text-zinc-400">Nama Berkas:</span>
-                                            <span className="font-semibold text-zinc-900 dark:text-white">Kontrak_Kerjasama_SaaS_2026.pdf</span>
+                                            <span className="text-zinc-400">File Name:</span>
+                                            <span className="font-semibold text-zinc-900 dark:text-white">Master_Service_Agreement_2026.pdf</span>
                                         </div>
                                         <div className="flex justify-between py-1 border-b border-zinc-200 dark:border-zinc-800">
-                                            <span className="text-zinc-400">Hash Checksum:</span>
+                                            <span className="text-zinc-400">Checksum Hash:</span>
                                             <span className="font-mono text-[11px] text-emerald-600">e3b0c44298fc1c149afbf4c8996fb924...</span>
                                         </div>
                                         <div className="flex justify-between py-1 border-b border-zinc-200 dark:border-zinc-800">
-                                            <span className="text-zinc-400">Total Penandatangan:</span>
-                                            <span className="font-semibold">3 Orang (Selesai & Sah)</span>
+                                            <span className="text-zinc-400">Total Signers:</span>
+                                            <span className="font-semibold">3 Parties (All Executed)</span>
                                         </div>
                                         <div className="flex justify-between py-1">
-                                            <span className="text-zinc-400">Waktu Penyelesaian:</span>
-                                            <span className="font-mono text-[11px]">2026-10-08 09:15:32 WIB</span>
+                                            <span className="text-zinc-400">Finalized Timestamp:</span>
+                                            <span className="font-mono text-[11px]">2026-10-08 09:15:32 UTC</span>
                                         </div>
                                     </div>
                                 </div>

@@ -1,73 +1,73 @@
-import { useState } from 'react';
-import { Link } from '@inertiajs/react';
 import { Check } from 'lucide-react';
 
 export default function PricingSection({ auth }) {
     const plans = [
         {
             name: 'Personal',
-            description: 'Untuk perorangan atau uji coba mandiri tanpa komitmen.',
-            price: 'Rp 0',
-            period: 'gratis selamanya',
+            description: 'For independent professionals and standard individual document signing.',
+            price: 'Free',
+            period: 'forever',
             features: [
-                'Batas 5 dokumen per bulan',
-                'Tanda tangan mandiri (draw, type, upload)',
-                'Verifikasi keaslian via kode QR',
-                'Download berkas PDF terenkripsi SHA-256',
-                'Sertifikat audit trail dasar',
+                'Up to 5 signed documents per month',
+                'Single-signer workflow',
+                'Touch canvas & typed typography signatures',
+                'Instant QR authenticity verification',
+                'Download SHA-256 encrypted PDF files',
+                'Standard audit trail summary certificate',
             ],
-            ctaText: 'Coba di Simulasi',
-            ctaHref: '#simulasi',
+            ctaText: 'Test in Interactive Demo',
+            ctaHref: '#demo',
             ctaVariant: 'secondary',
         },
         {
-            name: 'Profesional',
-            description: 'Untuk UMKM, startup, dan tim bisnis yang membutuhkan dokumen tanpa batas.',
-            price: 'Rp 49.000',
-            period: 'per bulan',
+            name: 'Professional',
+            description: 'For growing businesses and teams requiring unlimited document velocity.',
+            price: '$9',
+            period: 'per month',
             features: [
-                'Dokumen tidak terbatas (unlimited)',
-                'Alur kerja MultiSign (sekuensial & paralel)',
-                'Hingga 10 pihak penandatangan per dokumen',
-                'Pembubuhan stempel resmi organisasi',
-                'Pengingat otomatis via email',
-                'Sertifikat audit trail lengkap dengan log IP',
+                'Unlimited document volume',
+                'Sequential & Parallel MultiSign routing',
+                'Up to 10 designated signers per document',
+                'High-resolution organization stamp capture',
+                'Automated email reminders & status tracking',
+                'Complete audit trail certificates with IP logging',
             ],
-            ctaText: 'Coba di Simulasi',
-            ctaHref: '#simulasi',
+            ctaText: 'Test in Interactive Demo',
+            ctaHref: '#demo',
             ctaVariant: 'primary',
         },
         {
             name: 'Enterprise',
-            description: 'Untuk institusi korporat dengan kebutuhan volume tinggi dan integrasi API.',
-            price: 'Kustom',
-            period: 'penyesuaian kebutuhan',
+            description: 'For corporate institutions requiring strict compliance, dedicated SLAs, and custom throughput.',
+            price: 'Custom',
+            period: 'tailored to volume',
             features: [
-                'Semua fitur paket Profesional',
-                'Akses API RESTful & integrasi webhook',
-                'Dukungan tanda tangan massal (batch signing)',
-                'Hak akses berbasis peran (RBAC)',
-                'Dukungan teknis prioritas',
+                'Unlimited signers and document routing',
+                'Custom corporate branding and certificate design',
+                'Comprehensive audit logs with custom retention policies',
+                'Priority support with guaranteed response times',
+                'Dedicated compliance onboarding & legal validation',
+                'Granular team permissions & centralized archive',
             ],
-            ctaText: 'Hubungi Tim Penjualan',
-            ctaHref: 'mailto:support@wesign.id?subject=Inquiry%20Enterprise%20WeSign',
+            ctaText: 'Contact Enterprise Team',
+            ctaHref: 'mailto:enterprise@wesign.app?subject=Enterprise%20Inquiry',
             ctaVariant: 'secondary',
         },
     ];
 
     return (
-        <section id="harga" className="py-20 bg-zinc-50 dark:bg-zinc-950 border-b border-zinc-200/80 dark:border-zinc-800">
+        <section id="pricing" className="py-24 bg-white dark:bg-zinc-950 border-b border-zinc-200/80 dark:border-zinc-800">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Header */}
-                <div className="max-w-3xl mx-auto text-center mb-14">
+                <div className="max-w-3xl mx-auto text-center mb-16">
                     <span className="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">
-                        Skema Biaya Transparan
+                        Transparent Pricing
                     </span>
-                    <h2 className="text-3xl sm:text-4xl font-extrabold text-zinc-900 dark:text-white tracking-tight mt-2">
-                        Pilihan Paket Berdasarkan Volume Dokumen
+                    <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-zinc-900 dark:text-white tracking-tight mt-2">
+                        Predictable Plans for Every Stage of Growth
                     </h2>
-                    <p className="mt-3 text-base text-zinc-600 dark:text-zinc-400">
-                        Pilih kapasitas yang sesuai dengan kebutuhan legal dan alur penandatanganan organisasi Anda.
+                    <p className="mt-4 text-base sm:text-lg text-zinc-600 dark:text-zinc-400">
+                        Choose the capacity that aligns with your organization's legal workflows and document requirements.
                     </p>
                 </div>
 
@@ -77,7 +77,7 @@ export default function PricingSection({ auth }) {
                         return (
                             <div
                                 key={index}
-                                className="rounded-2xl p-6 sm:p-8 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 flex flex-col justify-between"
+                                className="rounded-2xl p-6 sm:p-8 bg-zinc-50/50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 flex flex-col justify-between"
                             >
                                 <div>
                                     <h3 className="text-xl font-bold text-zinc-900 dark:text-white">
@@ -87,7 +87,7 @@ export default function PricingSection({ auth }) {
                                         {plan.description}
                                     </p>
 
-                                    <div className="mt-6 pb-6 border-b border-zinc-100 dark:border-zinc-800 flex items-baseline gap-2">
+                                    <div className="mt-6 pb-6 border-b border-zinc-200/80 dark:border-zinc-800 flex items-baseline gap-2">
                                         <span className="text-3xl sm:text-4xl font-extrabold text-zinc-900 dark:text-white tracking-tight">
                                             {plan.price}
                                         </span>
@@ -98,7 +98,7 @@ export default function PricingSection({ auth }) {
 
                                     <div className="mt-6 space-y-3">
                                         <span className="text-xs font-bold text-zinc-900 dark:text-white uppercase tracking-wider block">
-                                            Fitur yang Disertakan:
+                                            Included Features:
                                         </span>
                                         <ul className="space-y-2.5">
                                             {plan.features.map((feature, fIndex) => (
@@ -111,26 +111,17 @@ export default function PricingSection({ auth }) {
                                     </div>
                                 </div>
 
-                                <div className="mt-8 pt-4 border-t border-zinc-100 dark:border-zinc-800">
-                                    {plan.ctaHref.startsWith('mailto:') ? (
-                                        <a
-                                            href={plan.ctaHref}
-                                            className="w-full inline-flex items-center justify-center px-4 py-2.5 rounded-xl text-xs font-bold bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700 text-zinc-900 dark:text-white transition-colors"
-                                        >
-                                            {plan.ctaText}
-                                        </a>
-                                    ) : (
-                                        <Link
-                                            href={plan.ctaHref}
-                                            className={`w-full inline-flex items-center justify-center px-4 py-2.5 rounded-xl text-xs font-bold transition-colors ${
-                                                plan.ctaVariant === 'primary'
-                                                    ? 'bg-emerald-600 hover:bg-emerald-700 text-white'
-                                                    : 'bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700 text-zinc-900 dark:text-white'
-                                            }`}
-                                        >
-                                            {plan.ctaText}
-                                        </Link>
-                                    )}
+                                <div className="mt-8 pt-4 border-t border-zinc-200/80 dark:border-zinc-800">
+                                    <a
+                                        href={plan.ctaHref}
+                                        className={`w-full inline-flex items-center justify-center px-4 py-2.5 rounded-xl text-xs font-bold transition-colors ${
+                                            plan.ctaVariant === 'primary'
+                                                ? 'bg-emerald-600 hover:bg-emerald-700 text-white'
+                                                : 'bg-white dark:bg-zinc-800 hover:bg-zinc-100 dark:hover:bg-zinc-700 text-zinc-900 dark:text-white border border-zinc-200 dark:border-zinc-700'
+                                        }`}
+                                    >
+                                        {plan.ctaText}
+                                    </a>
                                 </div>
                             </div>
                         );

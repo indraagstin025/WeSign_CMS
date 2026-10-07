@@ -15,10 +15,10 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
     return (
         <>
             <Head>
-                <title>WeSign - Platform SaaS Tanda Tangan Digital & CMS Dokumen Sah</title>
+                <title>WeSign - Digital Signature & Document Governance SaaS</title>
                 <meta
                     name="description"
-                    content="Kelola, tandatangani, dan verifikasi dokumen PDF secara digital dengan enkripsi kriptografis SHA-256, kolaborasi MultiSign, dan sertifikat audit trail sah di mata hukum."
+                    content="Sign, manage, and verify PDF documents digitally with SHA-256 cryptographic integrity, MultiSign collaborative routing, and legal audit trail certificates."
                 />
             </Head>
 

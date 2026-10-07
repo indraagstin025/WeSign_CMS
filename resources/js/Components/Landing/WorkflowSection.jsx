@@ -4,44 +4,44 @@ import ScrollReveal from '@/Components/Landing/ScrollReveal';
 export default function WorkflowSection() {
     const stages = [
         {
-            stage: 'Tahap 1',
+            stage: 'Stage 1',
             icon: UploadCloud,
-            title: 'Unggah Berkas PDF',
-            description: 'Masukkan dokumen kontrak, surat perjanjian, atau formulir internal ke dalam ruang kerja yang aman.',
+            title: 'Upload Source PDF',
+            description: 'Import contracts, agreements, or internal authorization forms into the secure workspace.',
         },
         {
-            stage: 'Tahap 2',
+            stage: 'Stage 2',
             icon: Users,
-            title: 'Atur Pihak & Urutan',
-            description: 'Tentukan pihak penandatangan dan pilih alur: Sekuensial (bergantian) atau Paralel (serempak).',
+            title: 'Configure Signers & Routing',
+            description: 'Define signers, email targets, and set routing mode: Sequential (hierarchical) or Parallel (concurrent).',
         },
         {
-            stage: 'Tahap 3',
+            stage: 'Stage 3',
             icon: PenTool,
-            title: 'Pembubuhan Tanda Tangan',
-            description: 'Penerima menandatangani secara instan via browser melalui goresan tangan, ketikan nama, atau stempel resmi.',
+            title: 'Signature Execution',
+            description: 'Recipients sign in their browser using hand-drawn strokes, typed legal typography, or official stamp assets.',
         },
         {
-            stage: 'Tahap 4',
+            stage: 'Stage 4',
             icon: FileCheck,
-            title: 'Validasi & Sertifikat Audit',
-            description: 'Sistem menyegel berkas dengan hash SHA-256, QR code verifikasi publik, serta sertifikat log jejak audit.',
+            title: 'Cryptographic Sealing & Audit',
+            description: 'The engine seals the document with SHA-256 hash checksums, embeds a public QR code, and issues the audit certificate.',
         },
     ];
 
     return (
-        <section id="alur-kerja" className="py-20 bg-white dark:bg-zinc-950 border-b border-zinc-200/80 dark:border-zinc-800">
+        <section id="workflow" className="py-20 bg-white dark:bg-zinc-950 border-b border-zinc-200/80 dark:border-zinc-800">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Header */}
                 <div className="max-w-3xl mx-auto text-center mb-14">
                     <span className="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">
-                        Alur Kerja Sistem
+                        Execution Lifecycle
                     </span>
                     <h2 className="text-3xl sm:text-4xl font-extrabold text-zinc-900 dark:text-white tracking-tight mt-2">
-                        Siklus Penandatanganan dari Pengunggahan hingga Segel Resmi
+                        From Document Upload to Cryptographic Finality
                     </h2>
                     <p className="mt-3 text-base text-zinc-600 dark:text-zinc-400">
-                        Alur terstruktur yang memastikan kejelasan status, kemudahan bagi para pihak, dan keabsahan hukum.
+                        A deterministic four-stage lifecycle designed for auditability, party transparency, and legal certainty.
                     </p>
                 </div>
 
@@ -70,7 +70,7 @@ export default function WorkflowSection() {
                                     </div>
 
                                     <div className="mt-4 pt-3 border-t border-zinc-200/60 dark:border-zinc-800 text-[11px] text-emerald-600 dark:text-emerald-400 font-medium">
-                                        Langkah {index + 1} dari 4
+                                        Step {index + 1} of 4
                                     </div>
                                 </div>
                             </ScrollReveal>

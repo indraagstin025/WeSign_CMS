@@ -5,23 +5,23 @@ export default function TrustBar() {
     const highlights = [
         {
             icon: ShieldCheck,
-            title: 'Kriptografi SHA-256',
-            description: 'Hash unik dokumen untuk mendeteksi perubahan sekecil apa pun',
+            title: 'SHA-256 Cryptography',
+            description: 'Unique digital fingerprint to detect any unauthorized content tampering',
         },
         {
             icon: Lock,
-            title: 'Sertifikat Audit Trail',
-            description: 'Mencatat rekam jejak waktu, alamat IP, dan identitas penandatangan',
+            title: 'Audit Trail Certificates',
+            description: 'Deterministic logs of execution timestamps, IP addresses, and signer IDs',
         },
         {
             icon: Award,
-            title: 'QR Code Verifikasi',
-            description: 'Pemeriksaan keaslian dokumen secara instan tanpa perlu login',
+            title: 'Public QR Verification',
+            description: 'Instant document validity check without requiring account creation',
         },
         {
             icon: FileText,
-            title: 'Standar Format Dokumen',
-            description: 'Mendukung berkas PDF standar dengan kompatibilitas jangka panjang',
+            title: 'Standard PDF Formats',
+            description: 'Strict conformance with ISO PDF specifications for long-term archiving',
         },
     ];
 

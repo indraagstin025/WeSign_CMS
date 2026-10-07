@@ -6,29 +6,29 @@ export default function FAQSection() {
 
     const faqs = [
         {
-            question: 'Apakah tanda tangan digital WeSign sah di mata hukum Indonesia?',
+            question: 'Are digital signatures executed on WeSign legally binding and enforceable?',
             answer:
-                'Ya, keabsahan tanda tangan digital pada WeSign dirancang sesuai dengan Undang-Undang Informasi dan Transaksi Elektronik (UU ITE No. 11/2008 Pasal 11) serta Peraturan Pemerintah No. 71/2019. Setiap berkas memuat identitas terverifikasi dari para penandatangan dan segel hash SHA-256 yang menjamin integritas isi dokumen.',
+                'Yes. Digital signatures on WeSign adhere to recognized electronic transaction legal frameworks, including the Indonesian Electronic Information and Transactions Act (UU ITE No. 11/2008 Article 11) and international standards (eIDAS / ESIGN principles). Each finalized document binds signer identities with deterministic SHA-256 cryptographic hashes and an evidentiary audit trail certificate.',
         },
         {
-            question: 'Bagaimana membuktikan bahwa isi dokumen tidak dimanipulasi setelah ditandatangani?',
+            question: 'How does WeSign prove that a document has not been altered after execution?',
             answer:
-                'Saat penandatanganan selesai, WeSign menghitung checksum hash kriptografis SHA-256 dari seluruh isi PDF dan menerbitkan kode QR verifikasi publik. Jika berkas diubah walaupun 1 karakter saja setelah penandatanganan, nilai hash akan langsung berubah dan pemindaian kode QR akan mendeteksi bahwa dokumen telah dimodifikasi.',
+                'Upon completion of all signatures, WeSign calculates an immutable SHA-256 cryptographic checksum of the entire PDF file and generates a public verification QR code. If even a single character or byte is modified post-execution, the checksum changes and scanning the QR code immediately flags the file as altered.',
         },
         {
-            question: 'Apakah penerima dokumen wajib memiliki akun atau membayar langganan WeSign?',
+            question: 'Do external signers or clients need a paid account to sign documents?',
             answer:
-                'Tidak. Pihak penerima atau pihak ketiga yang diundang untuk menandatangani dokumen dapat langsung membuka tautan aman melalui peramban web (browser), membubuhkan tanda tangan, dan mengunduh berkas akhir secara gratis tanpa harus memiliki akun berbayar.',
+                'No. External recipients or partners invited to sign can open the secure link directly in their desktop or mobile web browser, execute their signature, and download the finalized document for free without account creation.',
         },
         {
-            question: 'Apa perbedaan antara mode penandatanganan Sekuensial dan Paralel pada MultiSign?',
+            question: 'What is the distinction between Sequential and Parallel MultiSign routing?',
             answer:
-                'Pada mode Sekuensial, dokumen didistribusikan secara berurutan sesuai urutan jabatan: pihak kedua baru menerima notifikasi setelah pihak pertama selesai menandatangani. Pada mode Paralel, seluruh pihak menerima notifikasi secara bersamaan dan dapat menandatangani kapan saja tanpa perlu saling menunggu.',
+                'In Sequential mode, documents route through signers in a predefined order (e.g. Legal Counsel first, then Director, then Counterparty), notifying the next party only after the previous party completes. In Parallel mode, all parties receive the document simultaneously and can sign independently without waiting on one another.',
         },
         {
-            question: 'Apakah WeSign mendukung pembubuhan tanda tangan dari perangkat smartphone atau tablet?',
+            question: 'Does WeSign support touch signing on smartphones and tablets?',
             answer:
-                'Ya, antarmuka penandatanganan WeSign responsif dan mendukung layar sentuh secara penuh. Penandatangan dapat membubuhkan goresan tanda tangan menggunakan jari atau stylus secara langsung dari browser ponsel pintar tanpa memerlukan aplikasi tambahan.',
+                'Yes. The signing canvas is fully responsive and supports touch gestures, stylus input, and mobile camera QR scanning directly in standard mobile browsers without requiring native application downloads.',
         },
     ];
 
@@ -38,13 +38,13 @@ export default function FAQSection() {
                 {/* Header */}
                 <div className="text-center mb-12">
                     <span className="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">
-                        Pertanyaan Umum
+                        Frequently Asked Questions
                     </span>
                     <h2 className="text-3xl sm:text-4xl font-extrabold text-zinc-900 dark:text-white tracking-tight mt-2">
-                        Hal yang Sering Ditanyakan
+                        Technical & Legal Assurances
                     </h2>
                     <p className="mt-3 text-base text-zinc-600 dark:text-zinc-400">
-                        Penjelasan mengenai keabsahan hukum, mekanisme kriptografis, dan alur penandatanganan WeSign.
+                        Detailed answers regarding legal validity, cryptographic architecture, and signature workflows.
                     </p>
                 </div>
 
