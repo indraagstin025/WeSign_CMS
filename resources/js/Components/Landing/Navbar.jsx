@@ -30,28 +30,27 @@ export default function Navbar({ auth }) {
         <header
             className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-200 ${
                 scrolled
-                    ? 'bg-white/95 dark:bg-zinc-950/95 backdrop-blur-sm border-b border-zinc-200 dark:border-zinc-800 py-3'
-                    : 'bg-white/80 dark:bg-zinc-950/80 backdrop-blur-xs py-4 border-b border-zinc-100 dark:border-zinc-900'
+                    ? 'bg-white/95 dark:bg-zinc-950/95 backdrop-blur-sm border-b border-zinc-200 dark:border-zinc-800'
+                    : 'bg-white/80 dark:bg-zinc-950/80 backdrop-blur-xs border-b border-zinc-100 dark:border-zinc-900'
             }`}
         >
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex items-center justify-between">
-                    {/* Brand Logo */}
-                    <a href="#" className="flex items-center gap-2.5">
-                        <img
-                            src="/icons/LogoWhiteMode.svg"
-                            alt="WeSign Logo"
-                            className="h-11 sm:h-12 w-auto max-w-[210px] object-contain block dark:hidden"
-                        />
-                        <img
-                            src="/icons/LogoDarkMode.svg"
-                            alt="WeSign Logo"
-                            className="h-11 sm:h-12 w-auto max-w-[210px] object-contain hidden dark:block"
-                        />
-                        <span className="text-[10px] font-semibold uppercase tracking-wider px-1.5 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 border border-zinc-200 dark:border-zinc-700 hidden sm:inline-block">
-                            SaaS
-                        </span>
-                    </a>
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+                {/* Brand Logo */}
+                <a href="#" className="flex items-center gap-2">
+                    <img
+                        src="/icons/LogoWhiteMode.svg"
+                        alt="WeSign Logo"
+                        className="w-44 sm:w-48 h-auto max-h-16 object-contain block dark:hidden"
+                    />
+                    <img
+                        src="/icons/LogoDarkMode.svg"
+                        alt="WeSign Logo"
+                        className="w-44 sm:w-48 h-auto max-h-16 object-contain hidden dark:block"
+                    />
+                    <span className="text-[10px] font-semibold uppercase tracking-wider px-1.5 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 border border-zinc-200 dark:border-zinc-700 hidden sm:inline-block">
+                        SaaS
+                    </span>
+                </a>
 
                     {/* Desktop Navigation Links */}
                     <nav className="hidden md:flex items-center gap-6">
@@ -104,7 +103,6 @@ export default function Navbar({ auth }) {
                         </button>
                     </div>
                 </div>
-            </div>
 
             {/* Mobile Dropdown Menu */}
             {mobileMenuOpen && (

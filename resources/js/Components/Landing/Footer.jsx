@@ -11,12 +11,12 @@ export default function Footer() {
                             <img
                                 src="/icons/LogoWhiteMode.svg"
                                 alt="WeSign Logo"
-                                className="h-11 sm:h-12 w-auto max-w-[210px] object-contain block dark:hidden"
+                                className="w-44 sm:w-48 h-auto object-contain block dark:hidden"
                             />
                             <img
                                 src="/icons/LogoDarkMode.svg"
                                 alt="WeSign Logo"
-                                className="h-11 sm:h-12 w-auto max-w-[210px] object-contain hidden dark:block"
+                                className="w-44 sm:w-48 h-auto object-contain hidden dark:block"
                             />
                         </div>
                         <p className="text-xs leading-relaxed text-zinc-600 dark:text-zinc-400">

@@ -1,4 +1,4 @@
-export default function ApplicationLogo({ className = 'h-11 sm:h-12 w-auto max-w-[210px]', ...props }) {
+export default function ApplicationLogo({ className = 'w-44 sm:w-48 h-auto object-contain', ...props }) {
     return (
         <span className="inline-flex items-center">
             <img
