@@ -1,4 +1,5 @@
 import { UploadCloud, Users, PenTool, FileCheck } from 'lucide-react';
+import ScrollReveal from '@/Components/Landing/ScrollReveal';
 
 export default function WorkflowSection() {
     const stages = [
@@ -49,31 +50,30 @@ export default function WorkflowSection() {
                     {stages.map((item, index) => {
                         const Icon = item.icon;
                         return (
-                            <div
-                                key={index}
-                                className="p-6 rounded-2xl bg-zinc-50 dark:bg-zinc-900/50 border border-zinc-200/80 dark:border-zinc-800 flex flex-col justify-between"
-                            >
-                                <div>
-                                    <div className="flex items-center justify-between mb-4">
-                                        <div className="w-9 h-9 rounded-lg bg-zinc-100 dark:bg-zinc-800 text-emerald-600 dark:text-emerald-400 flex items-center justify-center border border-zinc-200/60 dark:border-zinc-700/60">
-                                            <Icon className="w-5 h-5" />
+                            <ScrollReveal key={index} delay={index * 100}>
+                                <div className="h-full p-6 rounded-2xl bg-zinc-50 dark:bg-zinc-900/50 border border-zinc-200/80 dark:border-zinc-800 flex flex-col justify-between">
+                                    <div>
+                                        <div className="flex items-center justify-between mb-4">
+                                            <div className="w-9 h-9 rounded-lg bg-zinc-100 dark:bg-zinc-800 text-emerald-600 dark:text-emerald-400 flex items-center justify-center border border-zinc-200/60 dark:border-zinc-700/60">
+                                                <Icon className="w-5 h-5" />
+                                            </div>
+                                            <span className="text-xs font-mono font-bold text-zinc-400">
+                                                {item.stage}
+                                            </span>
                                         </div>
-                                        <span className="text-xs font-mono font-bold text-zinc-400">
-                                            {item.stage}
-                                        </span>
+                                        <h3 className="text-base font-bold text-zinc-900 dark:text-white">
+                                            {item.title}
+                                        </h3>
+                                        <p className="mt-2 text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                                            {item.description}
+                                        </p>
                                     </div>
-                                    <h3 className="text-base font-bold text-zinc-900 dark:text-white">
-                                        {item.title}
-                                    </h3>
-                                    <p className="mt-2 text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed">
-                                        {item.description}
-                                    </p>
-                                </div>
 
-                                <div className="mt-4 pt-3 border-t border-zinc-200/60 dark:border-zinc-800 text-[11px] text-emerald-600 dark:text-emerald-400 font-medium">
-                                    Langkah {index + 1} dari 4
+                                    <div className="mt-4 pt-3 border-t border-zinc-200/60 dark:border-zinc-800 text-[11px] text-emerald-600 dark:text-emerald-400 font-medium">
+                                        Langkah {index + 1} dari 4
+                                    </div>
                                 </div>
-                            </div>
+                            </ScrollReveal>
                         );
                     })}
                 </div>

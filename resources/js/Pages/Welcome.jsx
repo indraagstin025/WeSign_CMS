@@ -9,6 +9,7 @@ import PricingSection from '@/Components/Landing/PricingSection';
 import FAQSection from '@/Components/Landing/FAQSection';
 import CTASection from '@/Components/Landing/CTASection';
 import Footer from '@/Components/Landing/Footer';
+import ScrollReveal from '@/Components/Landing/ScrollReveal';
 
 export default function Welcome({ auth, laravelVersion, phpVersion }) {
     return (
@@ -25,29 +26,39 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
                 {/* Header Navigation */}
                 <Navbar auth={auth} />
 
-                {/* Hero Showcase with Modern Dashboard Mockup */}
+                {/* Hero Showcase (Instant above-the-fold) */}
                 <HeroSection auth={auth} />
 
                 {/* Trust & Security Highlights */}
                 <TrustBar />
 
                 {/* Core SaaS Features Grid */}
-                <FeatureGrid />
+                <ScrollReveal>
+                    <FeatureGrid />
+                </ScrollReveal>
 
-                {/* 3-Step Clean Workflow */}
+                {/* 4-Step Clean Workflow */}
                 <WorkflowSection />
 
                 {/* Interactive Simulator Pad (Signature, MultiSign, QR Verification) */}
-                <InteractiveDemo />
+                <ScrollReveal>
+                    <InteractiveDemo />
+                </ScrollReveal>
 
                 {/* Transparent Pricing Plans */}
-                <PricingSection auth={auth} />
+                <ScrollReveal>
+                    <PricingSection auth={auth} />
+                </ScrollReveal>
 
                 {/* Interactive FAQ Accordion */}
-                <FAQSection />
+                <ScrollReveal>
+                    <FAQSection />
+                </ScrollReveal>
 
                 {/* Conversion Banner */}
-                <CTASection auth={auth} />
+                <ScrollReveal>
+                    <CTASection auth={auth} />
+                </ScrollReveal>
 
                 {/* Modern Footer */}
                 <Footer />

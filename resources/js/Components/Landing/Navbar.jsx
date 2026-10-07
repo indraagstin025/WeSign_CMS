@@ -62,31 +62,14 @@ export default function Navbar({ auth }) {
                         ))}
                     </nav>
 
-                    {/* Auth Actions */}
+                    {/* Header CTA Button */}
                     <div className="hidden sm:flex items-center gap-2">
-                        {auth?.user ? (
-                            <Link
-                                href={route('dashboard')}
-                                className="inline-flex items-center justify-center px-4 py-2 rounded-xl text-xs font-semibold bg-emerald-600 hover:bg-emerald-700 text-white transition-colors"
-                            >
-                                Buka Dashboard
-                            </Link>
-                        ) : (
-                            <>
-                                <Link
-                                    href={route('login')}
-                                    className="px-3.5 py-2 rounded-xl text-xs font-semibold text-zinc-700 dark:text-zinc-200 hover:text-emerald-600 dark:hover:text-emerald-400 hover:bg-zinc-100 dark:hover:bg-zinc-900 transition-colors"
-                                >
-                                    Masuk
-                                </Link>
-                                <Link
-                                    href={route('register')}
-                                    className="inline-flex items-center justify-center px-4 py-2 rounded-xl text-xs font-semibold bg-emerald-600 hover:bg-emerald-700 text-white transition-colors"
-                                >
-                                    Daftar Akun
-                                </Link>
-                            </>
-                        )}
+                        <a
+                            href="#simulasi"
+                            className="inline-flex items-center justify-center px-4 py-2 rounded-xl text-xs font-semibold bg-emerald-600 hover:bg-emerald-700 text-white transition-colors"
+                        >
+                            Coba Simulasi
+                        </a>
                     </div>
 
                     {/* Mobile Menu Button */}
@@ -118,29 +101,13 @@ export default function Navbar({ auth }) {
                     </nav>
 
                     <div className="pt-3 border-t border-zinc-100 dark:border-zinc-900 flex flex-col gap-2">
-                        {auth?.user ? (
-                            <Link
-                                href={route('dashboard')}
-                                className="w-full text-center py-2.5 rounded-xl text-xs font-bold bg-emerald-600 text-white"
-                            >
-                                Buka Dashboard
-                            </Link>
-                        ) : (
-                            <>
-                                <Link
-                                    href={route('login')}
-                                    className="w-full text-center py-2 rounded-xl text-xs font-bold text-zinc-700 dark:text-zinc-300 border border-zinc-200 dark:border-zinc-800"
-                                >
-                                    Masuk
-                                </Link>
-                                <Link
-                                    href={route('register')}
-                                    className="w-full text-center py-2 rounded-xl text-xs font-bold bg-emerald-600 text-white"
-                                >
-                                    Daftar Akun
-                                </Link>
-                            </>
-                        )}
+                        <a
+                            href="#simulasi"
+                            onClick={() => setMobileMenuOpen(false)}
+                            className="w-full text-center py-2.5 rounded-xl text-xs font-bold bg-emerald-600 text-white"
+                        >
+                            Coba Simulasi
+                        </a>
                     </div>
                 </div>
             )}

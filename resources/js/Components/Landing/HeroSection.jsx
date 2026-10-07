@@ -28,17 +28,17 @@ export default function HeroSection({ auth }) {
 
                         {/* Action Buttons */}
                         <div className="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
-                            <Link
-                                href={auth?.user ? route('dashboard') : route('register')}
-                                className="inline-flex items-center justify-center px-6 py-3 rounded-xl text-sm font-semibold bg-emerald-600 hover:bg-emerald-700 text-white transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600 shadow-xs"
-                            >
-                                {auth?.user ? 'Buka Dashboard Dokumen' : 'Daftar Akun WeSign'}
-                            </Link>
                             <a
                                 href="#simulasi"
-                                className="inline-flex items-center justify-center px-6 py-3 rounded-xl text-sm font-semibold text-zinc-800 dark:text-zinc-200 bg-white dark:bg-zinc-900 hover:bg-zinc-100 dark:hover:bg-zinc-800 border border-zinc-200 dark:border-zinc-800 transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-500"
+                                className="inline-flex items-center justify-center px-6 py-3 rounded-xl text-sm font-semibold bg-emerald-600 hover:bg-emerald-700 text-white transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600 shadow-xs"
                             >
                                 Coba Simulasi Interaktif
+                            </a>
+                            <a
+                                href="#alur-kerja"
+                                className="inline-flex items-center justify-center px-6 py-3 rounded-xl text-sm font-semibold text-zinc-800 dark:text-zinc-200 bg-white dark:bg-zinc-900 hover:bg-zinc-100 dark:hover:bg-zinc-800 border border-zinc-200 dark:border-zinc-800 transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-500"
+                            >
+                                Lihat Alur Kerja
                             </a>
                         </div>
 

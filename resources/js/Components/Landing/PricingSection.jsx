@@ -16,8 +16,8 @@ export default function PricingSection({ auth }) {
                 'Download berkas PDF terenkripsi SHA-256',
                 'Sertifikat audit trail dasar',
             ],
-            ctaText: 'Mulai Paket Gratis',
-            ctaHref: auth?.user ? route('dashboard') : route('register'),
+            ctaText: 'Coba di Simulasi',
+            ctaHref: '#simulasi',
             ctaVariant: 'secondary',
         },
         {
@@ -33,8 +33,8 @@ export default function PricingSection({ auth }) {
                 'Pengingat otomatis via email',
                 'Sertifikat audit trail lengkap dengan log IP',
             ],
-            ctaText: 'Pilih Paket Profesional',
-            ctaHref: auth?.user ? route('dashboard') : route('register'),
+            ctaText: 'Coba di Simulasi',
+            ctaHref: '#simulasi',
             ctaVariant: 'primary',
         },
         {
