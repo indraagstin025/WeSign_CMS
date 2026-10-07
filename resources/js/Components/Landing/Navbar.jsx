@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from '@inertiajs/react';
-import { PenLine, Menu, X, ArrowRight, ShieldCheck } from 'lucide-react';
+import { Menu, X, ArrowRight } from 'lucide-react';
 
 export default function Navbar({ auth }) {
     const [scrolled, setScrolled] = useState(false);
@@ -37,23 +37,20 @@ export default function Navbar({ auth }) {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between">
                     {/* Brand Logo */}
-                    <a href="#" className="flex items-center gap-2.5 group">
-                        <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-600 to-teal-400 flex items-center justify-center text-white shadow-md shadow-emerald-500/20 group-hover:scale-105 transition-transform duration-300">
-                            <PenLine className="w-5 h-5" strokeWidth={2.5} />
-                        </div>
-                        <div className="flex flex-col">
-                            <div className="flex items-center gap-1.5">
-                                <span className="text-xl font-bold tracking-tight text-zinc-900 dark:text-white">
-                                    WeSign
-                                </span>
-                                <span className="text-[10px] font-semibold uppercase tracking-wider px-1.5 py-0.5 rounded bg-emerald-50 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800/50">
-                                    SaaS
-                                </span>
-                            </div>
-                            <span className="text-[10px] font-medium text-zinc-500 dark:text-zinc-400 tracking-wide">
-                                Digital Signature & CMS
-                            </span>
-                        </div>
+                    <a href="#" className="flex items-center gap-2 group">
+                        <img
+                            src="/icons/LogoWhiteMode.svg"
+                            alt="WeSign Logo"
+                            className="h-10 sm:h-11 w-auto max-w-[160px] object-contain transition-all duration-300 block dark:hidden group-hover:scale-105"
+                        />
+                        <img
+                            src="/icons/LogoDarkMode.svg"
+                            alt="WeSign Logo"
+                            className="h-10 sm:h-11 w-auto max-w-[160px] object-contain transition-all duration-300 hidden dark:block group-hover:scale-105"
+                        />
+                        <span className="text-[10px] font-semibold uppercase tracking-wider px-1.5 py-0.5 rounded bg-emerald-50 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800/50 self-center hidden sm:inline-block">
+                            SaaS
+                        </span>
                     </a>
 
                     {/* Desktop Navigation Links */}

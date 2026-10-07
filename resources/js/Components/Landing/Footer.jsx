@@ -1,4 +1,4 @@
-import { PenLine, ShieldCheck, Heart } from 'lucide-react';
+import { ShieldCheck, Heart } from 'lucide-react';
 
 export default function Footer() {
     return (
@@ -7,13 +7,17 @@ export default function Footer() {
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
                     {/* Brand */}
                     <div className="md:col-span-1 space-y-4">
-                        <div className="flex items-center gap-2.5">
-                            <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-emerald-600 to-teal-400 flex items-center justify-center text-white shadow-xs">
-                                <PenLine className="w-4 h-4" strokeWidth={2.5} />
-                            </div>
-                            <span className="text-xl font-bold tracking-tight text-zinc-900 dark:text-white">
-                                WeSign
-                            </span>
+                        <div className="flex items-center gap-2">
+                            <img
+                                src="/icons/LogoWhiteMode.svg"
+                                alt="WeSign Logo"
+                                className="h-10 w-auto max-w-[150px] object-contain block dark:hidden"
+                            />
+                            <img
+                                src="/icons/LogoDarkMode.svg"
+                                alt="WeSign Logo"
+                                className="h-10 w-auto max-w-[150px] object-contain hidden dark:block"
+                            />
                         </div>
                         <p className="text-xs leading-relaxed text-zinc-500 dark:text-zinc-400">
                             Platform SaaS Tanda Tangan Digital & CMS Konten Dokumen. Cepat, sah, dan terenkripsi secara kriptografis.
