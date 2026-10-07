@@ -47,9 +47,6 @@ export default function Navbar({ auth }) {
                         alt="WeSign Logo"
                         className="h-12 sm:h-14 w-auto max-w-[220px] object-contain hidden dark:block"
                     />
-                    <span className="text-[10px] font-semibold uppercase tracking-wider px-1.5 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 border border-zinc-200 dark:border-zinc-700 hidden sm:inline-block">
-                        SaaS
-                    </span>
                 </a>
 
                     {/* Desktop Navigation Links */}
