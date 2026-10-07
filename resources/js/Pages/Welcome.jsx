@@ -1,4 +1,4 @@
-import { Head } from '@inertiajs/react';
+import Head from '@/Components/Head';
 import Navbar from '@/Components/Landing/Navbar';
 import HeroSection from '@/Components/Landing/HeroSection';
 import TrustBar from '@/Components/Landing/TrustBar';

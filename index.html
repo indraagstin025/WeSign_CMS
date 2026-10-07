@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WeSign - Digital Signature & Document Governance SaaS</title>
+    <meta
+      name="description"
+      content="Sign, manage, and verify PDF documents digitally with SHA-256 cryptographic integrity, MultiSign collaborative routing, and legal audit trail certificates."
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.bunny.net" />
+    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600,700,800&display=swap" rel="stylesheet" />
+
+    <!-- Theme Initialization (Defaults to Light Mode) -->
+    <script>
+      (function() {
+        var storedTheme = localStorage.getItem('theme');
+        if (storedTheme === 'dark') {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+      })();
+    </script>
+  </head>
+  <body class="font-sans antialiased selection:bg-emerald-500/20 selection:text-emerald-700 dark:selection:text-emerald-300">
+    <div id="root"></div>
+    <script type="module" src="/resources/js/main.jsx"></script>
+  </body>
+</html>

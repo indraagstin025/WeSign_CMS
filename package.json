@@ -4,7 +4,9 @@
     "type": "module",
     "scripts": {
         "build": "vite build",
-        "dev": "vite"
+        "build:static": "vite build --config vite.config.static.js",
+        "dev": "vite",
+        "preview:static": "vite preview --config vite.config.static.js"
     },
     "devDependencies": {
         "@headlessui/react": "^2.0.0",
